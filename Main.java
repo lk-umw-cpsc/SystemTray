@@ -21,7 +21,7 @@ public class Main {
     private static void createAndShowGUI() {
         String os = System.getProperty("os.name");
         String iconFilename = "calendar32.png";
-        
+
         // Use higher-resolution icon if user is on a Mac
         if (os.startsWith("Mac")) {
             iconFilename = "calendar.png";
@@ -52,6 +52,9 @@ public class Main {
             } catch (AWTException e) {
                 System.out.println("Unable to create tray icon!");
             }
+        } else {
+            System.out.println("System tray is not supported on this system.");
+            return;
         }
 
         window = new JFrame("System Tray Test");
