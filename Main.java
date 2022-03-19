@@ -19,11 +19,18 @@ public class Main {
     private static JFrame window;
 
     private static void createAndShowGUI() {
+        String os = System.getProperty("os.name");
+        String iconFilename = "calendar32.png";
+        
+        // Use higher-resolution icon if user is on a Mac
+        if (os.startsWith("Mac")) {
+            iconFilename = "calendar.png";
+        }
         if (SystemTray.isSupported()) {
             SystemTray systemTray = SystemTray.getSystemTray();
             TrayIcon icon = null;
             try {
-                icon = new TrayIcon(ImageIO.read(new File("calendar.png")));
+                icon = new TrayIcon(ImageIO.read(new File(iconFilename)));
             } catch (IOException e) {
                 System.out.println("Error loading tray icon");
                 return;
