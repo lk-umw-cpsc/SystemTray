@@ -11,7 +11,7 @@ public class Main {
 
     private static void createAndShowGUI() {
         JFrame appFrame = new MainFrame();
-        trayManager = new SystemTrayManager("calendar32.png", "calendar.png", appFrame);
+        trayManager = new SystemTrayManager("calendar16.png", "calendar.png", appFrame);
     }
 
     public static void main(String[] args) throws InvocationTargetException, InterruptedException {
