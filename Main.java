@@ -13,10 +13,11 @@ public class Main {
         JFrame appFrame = new MainFrame();
         trayManager = new SystemTrayManager("calendar32.png", "calendar.png", appFrame);
     }
-    
+
     public static void main(String[] args) throws InvocationTargetException, InterruptedException {
         if (!SystemTray.isSupported()) {
             System.out.println("System does not support system tray. Exiting.");
+            System.exit(-1);
         }
 
         SwingUtilities.invokeAndWait(Main::createAndShowGUI);
